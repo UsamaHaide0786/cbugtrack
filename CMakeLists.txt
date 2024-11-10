@@ -1,5 +1,5 @@
 # Set architecture explicitly for arm64
-set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64")
+set(CMAKE_OSX_ARCHITECTURES "x86_64")
 set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version" FORCE)
 # Set compilers for the arm64 architecture (clang and clang++)
 set(CMAKE_C_COMPILER /usr/bin/clang)
