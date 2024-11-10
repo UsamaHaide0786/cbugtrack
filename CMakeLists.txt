@@ -1,5 +1,5 @@
 # Set architecture explicitly for arm64
-set(CMAKE_OSX_ARCHITECTURES "x86_64")
+set(CMAKE_OSX_ARCHITECTURES "arm64")
 set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version" FORCE)
 # Set compilers for the arm64 architecture (clang and clang++)
 set(CMAKE_C_COMPILER /usr/bin/clang)
@@ -13,7 +13,6 @@ set(CMAKE_CXX_STANDARD 11)
 # Find and link FLTK
 find_package(FLTK REQUIRED)
 include_directories(${FLTK_INCLUDE_DIR})
-
 # Use pkg-config to find Cairo
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(CAIRO REQUIRED cairo)
@@ -29,6 +28,11 @@ link_directories(${FLTK_LIBRARY_DIRS})
 # Define source files
 set(SOURCES
 		src/main.cpp
+		src/LoginScreen.cpp
+		src/TrackerScreen.cpp
+		src/db.cpp
+		src/HelperFunctions.cpp
+		src/sync.cpp
 )
 
 # Create an executable and specify it's a macOS application bundle
